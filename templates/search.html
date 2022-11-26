@@ -1,59 +1,28 @@
 <html>
+{% extends "base.html" %}
+
+{% block title %}Search{% endblock title %}
 
 <head>
 
-   <title>Search Result</title>
 
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+{% block content %}
+<h1> Search Results </h1> 
+{% if searched %}
+ <h3> Here are your results </h3> 
+ <br/> 
+ {% for article in articles %}
+   <a href="{% url 'article_detail' article.id %}"> {{ article }} </a>  <br/> 
+ {% endfor %}
+{% else %}
+   <h3>No search entries</h3> 
+{% endif %}
 
-</head>
+{% endblock content %}
 
-<body>
-
-<br/></br/>
-
-<div class="container">
-
-   <div class="col-md-8 offset-md-2">
-
-{% if query %}
-
-           <h2>
-
-           {% with results.count as total_results %}
-
-           Found {{ total_results }} result{{ total_results|pluralize }}
-
-           {% endwith %}
-
-           </h2>
-
-   {% for c in results %}
-
-  <a href="{{c.get_url}}"><h3>{{c.book_name}}</h3></a>
-
-  <h3>{{c.author_name}}</h3>
-
-
-   {% empty %}
-
-   <h3>No results found.</h3>
-
-   {% endfor %}
-
-  {% endif %}
-
-        <form action="{% url 'book_list' %}" class="form-inline" method="get">
-
-        <button type="submit" class="btn btn-primary btn-lg mb-2">Back</button>
-
-        </form>
-
-    </div>
-
-</div>
 
 </body>
 

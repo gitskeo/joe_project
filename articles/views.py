@@ -1,4 +1,5 @@
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.shortcuts import render, get_object_or_404
 from django.views import View
 from django.views.generic import ListView, DetailView, FormView
 from django.views.generic.detail import SingleObjectMixin
@@ -12,6 +13,16 @@ from .models import Article
 class ArticleListView(LoginRequiredMixin, ListView):
     model = Article
     template_name = "article_list.html"
+
+
+def search(request):
+    if request.method == "POST":
+        searched = request.POST['searched']
+        articles = Article.objects.filter(title__contains=searched)
+
+        return render(request, 'search.html', {'searched': searched, 'articles': articles})
+    else:
+        return render(request, 'search.html', {})
 
 
 class CommentGet(LoginRequiredMixin, DetailView):
