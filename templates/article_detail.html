@@ -14,7 +14,6 @@
   <p> {{ comment }}</p>
 {% endfor %}
 <hr>
-
 <h4>Add a comment</h4>
   <form action="" method="post">{% csrf_token %}
     {{ form|crispy }}
@@ -24,4 +23,17 @@
 <p><a href="{% url 'article_edit' article.pk %}">Edit</a> |
   <a href="{% url 'article_delete' article.pk %}">Delete</a></p>
 <p>Back to <a href="{% url 'article_list' %}">All Articles</a>.</p>
+</br> 
+ <div class="card-footer">
+      {% for comment in article.comments_set.all %}
+        <p>
+          <span class="font-weight-bold">
+            {{ comment.author }} &middot;
+          </span>
+          {{ comment }}
+        </p>
+      {% endfor %}
+    </div>
+  </br> 
+
 {% endblock content %}

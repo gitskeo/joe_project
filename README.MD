@@ -16,7 +16,7 @@ Django features planned
 |Static Files|x||||
 |Queries|x||||
 |custom user models||x|||
-|Social Auth integration||x|||
+|django_crispy_forms||x|||
 |Ad hoc Forms||x|||
 |Email||x|||
 |authorization|x||||
@@ -49,7 +49,7 @@ Users will be able to:
 |Static Files|x||||
 |Queries||||x|
 |custom user models|||x||
-|Social Auth integration||||x|
+|django_crispy_forms||x|||
 |Ad hoc Forms|||x||
 |Email||||x|
 |authorization||||x|
