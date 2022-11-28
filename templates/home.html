@@ -3,6 +3,7 @@
 {% block title %}Home{% endblock title %}
 
 {% block content %}
+  <div class="container-xxl">
 {% if user.is_authenticated %}
   Hi {{ user.username }} 
   <p>Check out these <a href="{%url 'article_list'%}"> articles </a></p> 
@@ -11,4 +12,36 @@
   <a href="{% url 'login' %}">Log In</a> |
   <a href="{% url 'signup' %}">Sign Up</a>
 {% endif %}
+  </div>
+<div class="container-xxl">
+<h3>Making Sense of the Different Mental Health Professions</h3> 
+<p class="text-left">When considering whether to begin work with a mental health professional, 
+  making sense of the various professions that are out there can easily become quite confusing.
+As this is often one of the most frequently asked questions that I and my colleagues in the mental health professions tend to receive, 
+I thought a brief primer might be beneficial for anyone out there who feels like they would be benefitted by work with a helping professional, 
+but not sure where to start or which profession is appropriate for what they’re looking for. This can get very complicated very quickly, 
+but I’ll do my best to sketch a general idea:
+<p class="text-left"><strong>Psychiatrists</strong> are medical doctors. Unique among mental health professionals, they can prescribe psychotropic medication. 
+  While psychotherapy started with medical doctors like Freud and Jung in the late-1800’s, 
+  today the work of psychiatrists often tends to fall more in the realm of medication than of psychotherapy, 
+  although there certainly are still psychiatrists who also practice psychotherapy. Other mental health professionals specializing in psychotherapy
+   often collaborate with psychiatrists when working with clients whose conditions may be benefitted by medicinal prescription(s).</p>
+<p class="text-left"><strong> Psychologists </strong> hold doctoral degrees (PhD or PsyD) and often do practice psychotherapy, in addition to research, assessment, teaching, 
+  and other activities in line with their competencies and interests. Clinical psychology entailing therapeutic work with clients is one subfield 
+  of the discipline among others (organizational psychology or sports psychology, for instance). Practicing clinical psychologists are often specially 
+  trained to work with particularly complex psychological and neurobiological conditions such as severe cases of schizophrenia or bipolar disorder. </p>
+<p class="text-left"> <strong> Mental Health Counselors and Marriage and Family Therapists </strong> may hold a master’s degree or a PhD and have 
+  very similar courses of study and training. The main difference is that mental health counselor training has more of an emphasis on the individual 
+  as the primary unit of focus, while marriage and family therapist training has more of an emphasis on the family system as the primary unit of 
+  focus, though many counselors also work with relationships and families, and many marriage and family therapists also work with individuals. 
+  My own training is in mental health counseling.</p>
+  <p class="text-left"> <strong>Social workers </strong> also practice psychotherapy and may have a master’s or doctoral degree, but their course of study is different, and is more specifically geared towards working
+     with individuals coming from disadvantaged and lower-socioeconomic backgrounds.</p>
+  <p class="text-left"> <strong>Life coaches </strong> may help clients in overcoming difficulties or working towards goals similarly to psychotherapists in any of the above professions, but their profession is unregulated 
+    and thus does not require advanced degrees, training, or licensure of any kind.</p>
+  <p class="text-left">
+I hope this primer helps you in your journey of determining which professional is the closest match for what you’re looking for. If counseling seems most appropriate and you feel like I might be a good fit, 
+I would be very happy to have the opportunity to work with you. </p>
+</div>
+
 {% endblock content %}

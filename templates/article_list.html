@@ -4,6 +4,7 @@
 {% block title %}Articles{% endblock title %}
 
 {% block content %}
+<div class="container-xxl">
 {% for article in article_list %}
   <div class="card">
     <div class="card-header">
@@ -21,6 +22,8 @@
    
 
   </div>
+
   <br />
 {% endfor %}
+</div>
 {% endblock content %}
