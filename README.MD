@@ -61,7 +61,7 @@ Users will be able to:
 |Search|||x||
 
 
-url for the website will be joeysorenson.com
+url for the website will be https://joeysorensonblog.herokuapp.com/
 
 will likely use heroku for deployment.  This is to ensure ease of use for the client. 
 
